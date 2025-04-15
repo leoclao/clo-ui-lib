@@ -1,0 +1,24 @@
+# Node
+node_modules/
+dist/
+build/
+.pnpm-store/
+*.log
+*.lock
+
+# Vite
+.vite/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage/
+
+# CI
+.nyc_output/
