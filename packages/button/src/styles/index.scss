@@ -1,0 +1,21 @@
+@import "../../../../styles/index";
+
+.ui-button {
+  @apply inline-flex items-center justify-center border border-gray-300 rounded-md p-2 text-sm cursor-pointer transition-all;
+
+  &.small { font-size: 0.75rem; padding: 0.25rem 0.5rem; }
+  &.large { font-size: 1.25rem; padding: 0.75rem 1.25rem; }
+
+  &.filled { background-color: var(--color); color: white; }
+  &.outlined { border: 1px solid var(--color); color: var(--color); background: none; }
+  &.ghost { background: transparent; color: var(--color); }
+
+  &.primary { --color: #007bff; }
+  &.danger { --color: #dc3545; }
+
+  &.horizontal slot[name="icon"] { margin-right: 0.5rem; }
+  &.vertical {
+    flex-direction: column;
+    slot[name="icon"] { margin-bottom: 0.25rem; }
+  }
+}

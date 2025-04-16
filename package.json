@@ -2,6 +2,7 @@
   "private": true,
   "name": "clo-ui-lib",
   "version": "1.0.0",
+  "type": "module",
   "workspaces": [
     "packages/*",
     "apps/*",
@@ -25,12 +26,15 @@
   "license": "ISC",
   "packageManager": "pnpm@10.6.2",
   "devDependencies": {
-    "vite": "^5",
-    "typescript": "^5",
-    "sass": "^1.60.0",
+    "@types/node": "^22.14.1",
+    "autoprefixer": "^10.4.21",
     "path": "^0.12.7",
+    "postcss": "^8.5.3",
+    "sass": "^1.86.3",
+    "tailwindcss": "^4.1.4",
+    "typescript": "^5",
+    "vite": "^5",
     "vite-plugin-dts": "^4.5.3"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
