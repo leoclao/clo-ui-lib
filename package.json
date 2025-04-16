@@ -2,13 +2,35 @@
   "private": true,
   "name": "clo-ui-lib",
   "version": "1.0.0",
+  "workspaces": [
+    "packages/*",
+    "apps/*",
+    "shared/*"
+  ],
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "build:all": "pnpm -r run build",
+    "test": "bun test",
+    "lint": "eslint packages/**/src/**/*.ts"
+  },
+  "engines": {
+    "node": ">=18",
+    "bun": ">=1.0.0"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.6.2"
+  "packageManager": "pnpm@10.6.2",
+  "devDependencies": {
+    "vite": "^5",
+    "typescript": "^5",
+    "sass": "^1.60.0",
+    "path": "^0.12.7",
+    "vite-plugin-dts": "^4.5.3"
+  },
+  "dependencies": {
+  }
 }
