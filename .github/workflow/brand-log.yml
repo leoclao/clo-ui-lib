@@ -1,0 +1,31 @@
+name: Generate Branch Log
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  generate-log:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # cần full history cho git log
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - run: pnpm install
+
+      - name: Generate branch log
+        run: node scripts/gen-branch-log.js
+
+      - name: Commit updated branch log
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "action@github.com"
+          git add docs/branch-log.md
+          git commit -m "chore(docs): update branch log" || echo "No changes"
+          git push origin main
