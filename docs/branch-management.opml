@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>Branch Management</title>
+  </head>
+  <body>
+    <outline text="Branch Management (Quản lý nhánh)">
+      <outline text="1. Chiến lược nhánh (Branch Strategy)">
+        <outline text="main: sản phẩm ổn định"/>
+        <outline text="dev: nhánh phát triển tích hợp"/>
+        <outline text="release/*: chuẩn bị phát hành"/>
+        <outline text="feature/*, chore/*, bugfix/*: theo module"/>
+      </outline>
+      <outline text="2. Quy ước đặt tên nhánh">
+        <outline text="feature/&lt;component-name&gt;"/>
+        <outline text="chore/&lt;task-name&gt;"/>
+        <outline text="bugfix/&lt;issue-id&gt;-&lt;desc&gt;"/>
+        <outline text="release/&lt;version&gt;"/>
+      </outline>
+      <outline text="3. Quy trình làm việc">
+        <outline text="Tạo nhánh từ dev"/>
+        <outline text="Commit theo chuẩn Conventional Commits"/>
+        <outline text="Rebase trước khi merge"/>
+        <outline text="Tạo Pull Request (PR)"/>
+      </outline>
+      <outline text="4. Ghi chú nhánh (Branch Log)">
+        <outline text="File: docs/branch-log.md"/>
+        <outline text="Tự động sinh từ Git"/>
+        <outline text="Có thể tích hợp vào CI/CD"/>
+      </outline>
+      <outline text="5. Script hỗ trợ">
+        <outline text="scripts/gen-branch-log.sh"/>
+        <outline text="Sinh bảng log mô tả, trạng thái, PR, ngày tạo"/>
+      </outline>
+      <outline text="6. Tích hợp CI/CD">
+        <outline text="GitHub Actions gọi script log sau mỗi push"/>
+        <outline text="Kiểm tra chuẩn hóa nhánh, commit, PR"/>
+      </outline>
+    </outline>
+  </body>
+</opml>
