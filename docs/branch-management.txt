@@ -1,0 +1,26 @@
+Branch Management (Quản lý nhánh)
+- 1. Chiến lược nhánh (Branch Strategy)
+  - main: sản phẩm ổn định
+  - dev: nhánh phát triển tích hợp
+  - release/*: chuẩn bị phát hành
+  - feature/*, chore/*, bugfix/*: theo module
+- 2. Quy ước đặt tên nhánh
+  - feature/<component-name>
+  - chore/<task-name>
+  - bugfix/<issue-id>-<desc>
+  - release/<version>
+- 3. Quy trình làm việc
+  - Tạo nhánh từ dev
+  - Commit theo chuẩn Conventional Commits
+  - Rebase trước khi merge
+  - Tạo Pull Request (PR)
+- 4. Ghi chú nhánh (Branch Log)
+  - File: docs/branch-log.md
+  - Tự động sinh từ Git
+  - Có thể tích hợp vào CI/CD
+- 5. Script hỗ trợ
+  - scripts/gen-branch-log.sh
+  - Sinh bảng log mô tả, trạng thái, PR, ngày tạo
+- 6. Tích hợp CI/CD
+  - GitHub Actions gọi script log sau mỗi push
+  - Kiểm tra chuẩn hóa nhánh, commit, PR
