@@ -1,27 +1,31 @@
+# Skip Lefthook in CI environments, so hooks do not run during CI runs.
+# However, it allows running hooks in local environments.
 skip:
-  envs: [CI, GITHUB_ACTIONS]
+  envs: [CI]
 
 pre-commit:
   parallel: true
   commands:
     lint:
-      run: pnpm -r lint
+      run: pnpm lint
+    test:
+      run: pnpm test
     format:
-      run: pnpm -r format
+      run: pnpm format
     typecheck:
-      run: pnpm -r typecheck
+      run: pnpm typecheck
     stylelint:
-      run: pnpm -r stylelint
+      run: pnpm stylelint
 
 pre-push:
   parallel: true
   commands:
     test:
-      run: pnpm -r test
+      run: pnpm test
     build:
-      run: pnpm -r build
+      run: pnpm build
 
 commit-msg:
   commands:
     commitlint:
-      run: pnpm commitlint --edit {1}
+      run: npx commitlint --edit \$1

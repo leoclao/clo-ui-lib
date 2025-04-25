@@ -26,5 +26,5 @@ jobs:
       - name: Setup Lefthook
         run: ./scripts/setup-lefthook.sh
 
-      - name: Run Lefthook manually
-        run: lefthook run pre-commit
+      - name: Run Lefthook pre-commit (npx)
+        run: npx lefthook run pre-commit
