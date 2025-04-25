@@ -1,0 +1,27 @@
+skip:
+  envs: [CI, GITHUB_ACTIONS]
+
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      run: pnpm -r lint
+    format:
+      run: pnpm -r format
+    typecheck:
+      run: pnpm -r typecheck
+    stylelint:
+      run: pnpm -r stylelint
+
+pre-push:
+  parallel: true
+  commands:
+    test:
+      run: pnpm -r test
+    build:
+      run: pnpm -r build
+
+commit-msg:
+  commands:
+    commitlint:
+      run: pnpm commitlint --edit {1}
