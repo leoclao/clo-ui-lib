@@ -1,0 +1,23 @@
+# Conventional Commit Message Template
+
+# Format:
+# <type>[optional scope]: <short summary>
+# [optional body]
+# [optional footer]
+
+# Examples:
+# feat(button): add support for icon and label layout
+# fix(player): handle crash on missing audio track
+# chore: update dependencies
+
+# Types:
+# feat     - New feature
+# fix      - Bug fix
+# docs     - Documentation change
+# style    - Code style (formatting, missing semi colons, etc)
+# refactor - Code refactoring
+# test     - Adding missing tests
+# chore    - Maintenance tasks
+# ci       - CI/CD changes
+# build    - Build-related changes
+# perf     - Performance improvements
