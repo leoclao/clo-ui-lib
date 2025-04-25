@@ -15,7 +15,8 @@
     "build": "vite build",
     "build:all": "pnpm -r run build",
     "test": "bun test",
-    "lint": "eslint packages/**/src/**/*.ts"
+    "lint": "eslint packages/**/src/**/*.ts",
+    "prepare": "lefthook install"
   },
   "engines": {
     "node": ">=18",
@@ -31,13 +32,14 @@
     "@custom-elements-manifest/analyzer": "^0.10.4",
     "@types/node": "^22.14.1",
     "autoprefixer": "^10.4.21",
-    "husky": "^9.1.7",
+    "lefthook": "^1.11.11",
     "path": "^0.12.7",
     "postcss": "^8.5.3",
     "sass": "^1.87.0",
     "simple-git": "^3.27.0",
     "tailwindcss": "^4.1.4",
     "typescript": "^5.8.3",
+    "vite": "^6.3.3",
     "vite-plugin-dts": "^4.5.3"
   }
 }

@@ -1,0 +1,31 @@
+# Skip Lefthook in CI environments, so hooks do not run during CI runs.
+# However, it allows running hooks in local environments.
+skip:
+  envs: [CI]
+
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      run: pnpm lint
+    test:
+      run: pnpm test
+    format:
+      run: pnpm format
+    typecheck:
+      run: pnpm typecheck
+    stylelint:
+      run: pnpm stylelint
+
+pre-push:
+  parallel: true
+  commands:
+    test:
+      run: pnpm test
+    build:
+      run: pnpm build
+
+commit-msg:
+  commands:
+    commitlint:
+      run: npx commitlint --edit \$1
