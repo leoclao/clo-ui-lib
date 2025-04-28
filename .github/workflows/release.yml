@@ -1,0 +1,56 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    name: Version and Publish
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+
+    steps:
+      # Clone mã nguồn
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Cài đặt pnpm
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+
+      # Cài đặt Node.js + cache
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          registry-url: 'https://registry.npmjs.org/'
+          cache: 'pnpm'
+
+      # Cài đặt dependencies
+      - name: Install dependencies
+        run: pnpm install
+
+      # Bump version dựa trên .changeset/*
+      - name: Version packages
+        run: pnpm changeset version
+
+      # Publish lên npm
+      - name: Publish to npm
+        run: pnpm changeset publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # Commit và push các thay đổi version/package.json
+      - name: Commit and push version bump
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "chore: bump versions [skip ci]" || echo "No changes to commit"
+          git push origin main
