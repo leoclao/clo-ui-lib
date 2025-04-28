@@ -16,7 +16,9 @@
     "build:all": "pnpm -r run build",
     "test": "bun test",
     "lint": "eslint packages/**/src/**/*.ts",
-    "prepare": "lefthook install"
+    "prepare": "lefthook install",
+    "version-packages": "changeset version",
+    "release": "changeset publish"
   },
   "engines": {
     "node": ">=18",
@@ -27,6 +29,8 @@
   "license": "ISC",
   "packageManager": "pnpm@10.6.2",
   "devDependencies": {
+    "@changesets/changelog-github": "^0.5.1",
+    "@changesets/cli": "^2.29.2",
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
     "@custom-elements-manifest/analyzer": "^0.10.4",
