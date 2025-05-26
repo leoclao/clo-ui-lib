@@ -1,7 +1,7 @@
 
 {
   "$schema": "https://unpkg.com/@changesets/config@2.3.1/schema.json",
-  "changelog": ["@changesets/changelog-github", { "repo": "leoclao/clo-ui-lib" }],
+  "changelog": ["@changesets/changelog-github", { "repo": "leoclao/clo-ui-lib", "outputFolder": "./" }],
   "commit": false,
   "linked": [],
   "access": "public",

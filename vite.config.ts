@@ -4,6 +4,7 @@ import path from 'path';
 
 export default defineConfig({
   build: {
+    target: 'esnext',
     lib: {
       entry: path.resolve('packages/index.ts'), // import lại từ các module con
       name: 'UiLib',
@@ -19,7 +20,14 @@ export default defineConfig({
           angular: 'Angular'
         }
       }
-    }
+    },
+    outDir: 'dist',
+    emptyOutDir: true
   },
-  plugins: [dts()]
+  plugins: [dts({
+      entryRoot: 'src',
+      outDir: 'dist',
+      skipDiagnostics: false,
+      logDiagnostics: true
+  })]
 });
