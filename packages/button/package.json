@@ -1,11 +1,19 @@
 {
-  "name": "@ui/button",
+  "name": "@clo-ui-lib/button",
   "version": "0.1.2",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
+  "files": ["dist"],
   "scripts": {
     "build": "vite build",
-    "dev": "vite"
+    "dev": "vite",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@clo-ui-lib/types": "workspace:*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
