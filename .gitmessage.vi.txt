@@ -1,0 +1,30 @@
+# Viết commit theo chuẩn Conventional Commits: https://www.conventionalcommits.org
+#
+# Cấu trúc:
+# <type>(<scope>): <message>
+#
+# <type>     : Loại thay đổi (xem bên dưới)
+# <scope>    : Gói/thành phần/module cụ thể trong monorepo (vd: button, modal, cli, docs, build)
+# <message>  : Mô tả ngắn gọn thay đổi (viết ở thì hiện tại, không viết hoa, không chấm cuối dòng)
+#
+# Ví dụ:
+# feat(button): thêm trạng thái loading cho nút
+# fix(modal): sửa lỗi đóng modal không hoạt động trên mobile
+# docs(readme): cập nhật hướng dẫn cài đặt thư viện
+#
+# Loại commit phổ biến:
+# - feat      : Thêm tính năng mới
+# - fix       : Sửa lỗi
+# - docs      : Thay đổi tài liệu
+# - style     : Thay đổi định dạng/code style (không ảnh hưởng logic)
+# - refactor  : Refactor code, không thêm tính năng/sửa bug
+# - test      : Thêm hoặc cập nhật test
+# - chore     : Thay đổi công cụ, build, CI/CD, cấu hình
+# - perf      : Tối ưu hiệu suất
+#
+# Dòng thứ 2 trở đi có thể thêm mô tả chi tiết, ví dụ:
+#
+# - Giải thích tại sao thay đổi này cần thiết
+# - Liên kết issue (nếu có): Closes #123
+#
+# -----------------------------------------------------
