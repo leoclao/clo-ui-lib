@@ -20,7 +20,8 @@
     "lint": "pnpm -r run lint",
     "prepare": "lefthook install",
     "version-packages": "pnpm changeset version",
-    "release": "pnpm changeset publish"
+    "release": "pnpm changeset publish",
+    "gitmsg": "ts-node scripts/switch-gitmessage.ts"
   },
   "engines": {
     "node": ">=18",
@@ -33,14 +34,17 @@
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
     "@custom-elements-manifest/analyzer": "^0.10.4",
-    "@types/node": "^22.14.1",
+    "@types/node": "^22.15.1",
     "autoprefixer": "^10.4.21",
+    "chalk": "^5.4.1",
+    "inquirer": "^12.6.3",
     "lefthook": "^1.11.11",
     "path": "^0.12.7",
     "postcss": "^8.5.3",
     "sass": "^1.87.0",
     "simple-git": "^3.27.0",
     "tailwindcss": "^4.1.4",
+    "ts-node": "^10.9.2",
     "typescript": "^5.8.3",
     "vite": "^6.3.3",
     "vite-plugin-dts": "^4.5.3"
