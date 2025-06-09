@@ -14,5 +14,5 @@ export default defineConfig({
     outDir: 'dist',
     emptyOutDir: true
   },
-  plugins: [dts({ entryRoot: 'src', outputDir: 'dist' })]
+  plugins: [dts({ entryRoot: 'src', outDir: 'dist' })]
 });
