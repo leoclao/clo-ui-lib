@@ -21,7 +21,9 @@
     "prepare": "lefthook install",
     "version-packages": "pnpm changeset version",
     "release": "pnpm changeset publish",
-    "gitmsg": "ts-node scripts/switch-gitmessage.ts"
+    "gitmsg": "ts-node scripts/switch-gitmessage.ts",
+    "gitcli:build": "tsc",
+    "gitcli": "pnpm run gitcli:build && node dist/scripts/cli/index.js"
   },
   "engines": {
     "node": ">=18",
@@ -45,6 +47,7 @@
     "simple-git": "^3.27.0",
     "tailwindcss": "^4.1.4",
     "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.8.3",
     "vite": "^6.3.3",
     "vite-plugin-dts": "^4.5.3"
